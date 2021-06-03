@@ -15,7 +15,7 @@ Simple run ```docker-compose up``` command.
 
 ### Run locally
 
-```make client && make mongo && make server```
+```make run_client && make mongo && make run_port_server```
 
 ### APIs
 
