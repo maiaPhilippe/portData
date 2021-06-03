@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package port;
+option go_package = "/protobuf";
+
+message portRequest {
+    string name = 1;
+    string city = 2;
+    string country = 3;
+    repeated string alias = 4;
+    repeated string regions = 5;
+    repeated double coordinates = 6;
+    string province = 7;
+    string timezone = 8;
+    repeated string unlocs = 9;
+    string code = 10;
+    string key = 11;
+}
+
+message portResponse {
+    string response = 1;
+}
+
+message getPortByIdResponse {
+    string name = 1;
+    string city = 2;
+    string country = 3;
+    repeated string alias = 4;
+    repeated string regions = 5;
+    repeated double coordinates = 6;
+    string province = 7;
+    string timezone = 8;
+    repeated string unlocs = 9;
+    string code = 10;
+    string key = 11;
+}
+
+message getPortByIdRequest {
+    string key = 1;
+}
+
+service portService {
+    rpc PortData(portRequest) returns (portResponse) {};
+    rpc GetPortById(getPortByIdRequest) returns (getPortByIdResponse) {};
+}
